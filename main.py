@@ -1,9 +1,9 @@
 from colored import Fore, Back, Style
 
 from classes.carpark import Carpark
-from functions.carpark_functions import add_slot, list_slots
+from functions.carpark_functions import add_slot, list_slots, delete_slot
 
-print(f"{Fore.yellow}{Back.red}Welcome to the Carpark Application!!!{Style.reset} \n")
+print(f"{Fore.yellow}{Back.red}Welcome to the Carpark Application!!!{Style.reset}\n")
 
 def create_menu():
     print("Enter 1 to add a parking slot.")
@@ -12,38 +12,34 @@ def create_menu():
     print("Enter 4 to park a car.")
     print("Enter 5 to find a parked car.")
     print("Enter 6 to remove a car from the carpark.")
-    print("Enter 7 to exit \n")
+    print("Enter 7 to exit.\n")
 
     choice = input("Enter your choice: ")
-    
+
     return choice
 
-input_choice = ""
+choice = ""
 
 carpark = Carpark("Carparker")
 
-while input_choice != "7":
-    input_choice = create_menu()
+while choice != "7":
+    choice = create_menu()
 
-    if input_choice == "1":
+    if choice == "1":
         add_slot(carpark)
-    elif input_choice == "2":
-        print("Delete slot")
-    elif input_choice == "3":
+    elif choice == "2":
+        delete_slot(carpark)
+    elif choice == "3":
         list_slots(carpark)
-    elif input_choice == "4":
-        print ("Park Car")
-    elif input_choice == "5":
-        print ("Find car")
-    elif input_choice == "3":
-        print ("remove car")
-    elif input_choice == "7":
-        print ("Exiting")
+    elif choice == "4":
+        print("Park car")
+    elif choice == "5":
+        print("Find car")
+    elif choice == "6":
+        print("Remove car")
+    elif choice == "7":
+        print("Exiting")
     else:
         print("Invalid choice")
 
-print("Thank you for using the Carpark Application")
-
-
-
-
+print("Thank you for using the Carpark Application.")
