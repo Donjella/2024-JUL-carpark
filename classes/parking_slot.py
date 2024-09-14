@@ -5,8 +5,11 @@ class ParkingSlot:
 
     def __str__(self):
         if self.car:
-            return f"Parking slot with id {self.id} and has the follow car: {self.car}"
+            return f"Parking slot with id {self.id} and has the following car: {self.car}"
         else:
-            return f"Parking slot with id {self.id}"
+            return f"Parking slot with id {self.id} and has no car parked"
         
     # the above codes can change into a single line, can find out ourselves how
+
+
+     
